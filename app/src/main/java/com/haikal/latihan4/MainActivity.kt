@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     private lateinit var forgotPassword : TextView
+    private lateinit var signUp : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         forgotPassword = findViewById(R.id.forgotPassword)
+        signUp = findViewById(R.id.signUp)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -29,6 +31,11 @@ class MainActivity : AppCompatActivity() {
         forgotPassword.setOnClickListener() {
             var intent = Intent(this@MainActivity, ForgotPasword::class.java)
             startActivity(intent)
+        }
+
+        signUp.setOnClickListener() {
+            var intent2 = Intent(this@MainActivity, SignUp::class.java)
+            startActivity(intent2)
         }
 
     }
